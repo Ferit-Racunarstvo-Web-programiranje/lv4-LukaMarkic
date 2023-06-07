@@ -1,0 +1,532 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Mogra&family=Nanum+Brush+Script&family=Oregano&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kalam&family=Mogra&family=Nanum+Brush+Script&family=Varela+Round&display=swap');
+
+
+/* CSS variables */
+:root {
+    --primary-color: rgb(5, 198, 18);
+    --secondary-color: #6c757d;
+    --font-size-base: 16px;
+    --font-family-base: Arial, sans-serif;
+}
+
+/* Global styles */
+body {
+    background-color: rgba(251, 255, 252, 0.5);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-base);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.title-container{
+    
+    background-color: rgba(249, 249, 249, 0.9);
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+
+.title-container h1 {
+    font-family: 'Mogra', cursive;
+    font-size: 5.5em;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header styles */
+.right-side-container{
+
+    background-color: rgba(249, 249, 249, 0.9);
+    height: 50%;
+    padding: 0px 20px;
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+
+#shopping-cart-image{
+    height: 200px;
+    width: 200px;
+}
+
+
+.cart-button {
+    
+    font-family: 'Caveat', cursive;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5em 0.5em;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.cart-button:hover{
+    transition: 500ms;
+    background-color: rgb(5, 152, 15);
+}
+
+.cart-badge {
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    padding: 0.1em 0.4em;
+    margin-left: 0.5em;
+    font-size: 0.8em;
+    text-align: left;
+}
+
+.select-sort-container{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 2em;
+    margin-left: 100px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #b2b2b2;
+    font-size: 1.2em;
+    width: 330px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 10px;
+}
+
+#sort{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    border: none;
+    background-color: white;
+}
+
+
+/* Items grid styles */
+.items-grid {
+    padding: 5px 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-gap: 1em;
+    margin-top: 4em;
+    margin-bottom: 6em;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255);
+    border: 1px solid #e4e4e4;
+    border-radius: 3px;
+    padding: 1em;
+}
+
+.item:hover{
+    transition: 700ms;
+    border: 1px solid #9c9999;
+    box-shadow: 0px 5px 5px #9c9999;
+}
+
+.item h2 {
+    
+    font-family: 'Kalam', cursive, sans-serif;
+    margin-top: 0.5em;
+}
+
+.item p {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.2em;
+    margin: 0.75em 0;
+    margin-bottom: 0.8em;
+}
+
+.item img{
+    height: 140px;
+}
+
+
+.cart-badge-container p{
+
+    font-size: 1.05em;
+    font-family: 'Kalam', cursive, sans-serif;
+}
+
+
+.item p span{
+    color: #b2b2b2;
+}
+
+.add-to-cart-btn {
+    font-family: 'Caveat', cursive;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.31em 1em;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.add-to-cart-btn:hover{
+    transition: 450ms;
+    background-color: rgb(5, 152, 15);
+}
+
+
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    
+}
+
+.modal.show-modal {
+    display: block;
+    opacity: 1;
+}
+
+.modal-content {
+    font-family: 'Kalam', cursive, sans-serif;
+    background-color: white;
+    margin: 15% auto;
+    padding: 1em;
+    border: 1px solid #ccc;
+    max-width: 600px;
+}
+
+.modal-content p{
+    font-family: 'Varela Round', sans-serif;
+}
+
+.close {
+    float: right;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cart-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cart-items li {
+    
+    font-family: 'Varela Round', sans-serif;
+    background-color: #baf4b755;
+    border-radius: 8px;
+    padding: 8px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5em;
+}
+
+.cart-items li span {
+    margin-left: 0.5em;
+}
+
+.item-cart-title{
+    font-size: 1.4em;
+    font-family: 'Kalam', cursive, sans-serif;
+}
+.cart-total {
+    font-weight: bold;
+}
+
+.cart-total span {
+    color: #b2b2b2;
+}
+
+.remove-item{
+    float: right;
+    font-size: 1.3em;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #cbc9c9;
+    color: white;
+    border-radius: 50%;
+    padding: 0.2em 0.55em;
+    
+}
+
+.buy-btn {
+    font-family: 'Caveat', cursive;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.buy-btn:hover{
+    transition: 500ms;
+    background-color: rgb(5, 152, 15);
+}
+
+.remove-items-btn{
+    font-family: 'Caveat', cursive;
+    background-color: #f66060;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.remove-items-btn:hover{
+    transition: 500ms;
+    background-color: rgb(250, 55, 55);
+}
+
+.cart-buttons-contianer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.welome-image-container{
+    backdrop-filter: blur(10px);
+    background-image: url("../images\\welcome-background-img.jpg");
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wallet-button{
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid rgb(186, 186, 186);
+    background-color: rgb(127, 180, 249);
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.wallet-button:hover{
+    transition: 600ms;
+    background-color: rgb(62, 144, 250);
+}
+
+.wallet-button img{
+    background-color: white;
+    padding: 5px;
+    order: 0;
+    width: 33.1px;
+    height: 33.1px;
+    border-radius: 5px;
+}
+
+.wallet-button span{
+    font-size: 1.5em;
+    font-family: 'Caveat', cursive;
+}
+
+.admin-button{
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid rgb(186, 186, 186);
+    background-color: rgb(255, 255, 255);
+    font-size: 1.3em;
+    font-family: 'Caveat', cursive;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.admin-button:hover{
+    transition: 600ms;
+    background-color: rgb(235, 235, 247);
+}
+
+.admin-button a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.modal-balance {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    
+}
+
+.modal-balance.show-modal {
+    display: block;
+    opacity: 1;
+}
+
+.modal-balance-content{
+    font-family: 'Kalam', cursive, sans-serif;
+    background-color: white;
+    margin: 15% auto;
+    padding: 1em;
+    border: 1px solid #ccc;
+    max-width: 600px;
+}
+
+.modal-balance p{
+    font-family: 'Varela Round', sans-serif;
+}
+
+.close-balance{
+    float: right;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-balance{
+    margin-top: 1em;
+    font-size: 1.1em;
+    font-family: 'Kalam', cursive, sans-serif;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid rgb(135, 136, 135);
+    background-color: rgb(127, 180, 249);
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+.add-balance:hover{
+    transition: 600ms;
+    background-color: rgb(62, 144, 250);
+}
+
+.balnce-total {
+    font-weight: bold;
+}
+
+.balance-total-kn {
+    color: #b2b2b2;
+}
+
+#alert-message{
+    color: #f66060;
+}
+
+#blance-status-cart{
+    margin-top: 0.0em;
+    color: #4b4b4bc5;
+    text-align: right;
+}
+
+
+
+.cart-div{
+    
+    border-radius: 5px;
+    border: 1px solid rgb(186, 186, 186);
+    background-color: rgb(127, 180, 249);   
+    cursor: pointer;
+    padding-right: 5px;
+}
+
+.cart-div a{
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-div:hover{
+    transition: 600ms;
+    background-color: rgb(62, 144, 250);
+}
+
+.cart-div img{
+    background-color: white;
+    padding: 5px;
+    order: 0;
+    width: 33.1px;
+    height: 33.1px;
+    border-radius: 5px;
+}
+
+.cart-div span{
+    font-size: 1.5em;
+    font-family: 'Caveat', cursive;
+}
+
+
+.box{
+    background-color: #ffffff;
+    margin-top: 1em;
+    margin-left: 100px;
+    padding: 5px 12px;
+    border: 2px solid #f9dada;
+    border-radius: 5px;
+    width: 25%;
+}
+
+.amount-input{
+    width: 60px;
+    border-radius: 3px;
+    padding: 0.25em 0.5em;
+    font-size: 1.05em;
+    border: 1px solid #c4c2c2;
+}
+
+#purchase-form{
+    margin-top: 0.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+   justify-content: space-between;
+   
+}
+
+
+#purchase-form div label{
+    font-family: 'Caveat', cursive;
+    font-size: 1.3em;
+    padding-right: 5px;
+}
+

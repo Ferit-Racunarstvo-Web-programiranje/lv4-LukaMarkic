@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Mogra&family=Nanum+Brush+Script&family=Oregano&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kalam&family=Mogra&family=Nanum+Brush+Script&family=Varela+Round&display=swap');
+
+
+* {
+    background-color: rgba(251, 255, 252, 0.5);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 12px;
+    background-color: #b0f994c9;
+}
+.nav-cart h1{
+    font-family: 'Mogra', cursive;
+    font-size: 1.5em;
+    margin: 0;
+    width: auto;
+    background-color: #b0f994c9;
+}
+
+.nav-cart div{
+    border-radius: 5px;
+    border: 1px solid rgb(124, 124, 124);
+    background-color: rgb(255, 255, 255);   
+    cursor: pointer;
+    padding: 5px 0px;
+}
+
+.nav-cart div a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.35em;
+    font-family: 'Caveat', cursive;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    padding: 5px 12px;
+}
+
+.nav-cart div a:hover{
+    transition: 450ms;
+    background-color: rgb(231, 229, 255);
+}
+
+.cart-section{
+    margin: 100px 75px;
+    border: 1px solid #5d5d5d;
+    border-radius: 5px;
+}
+
+.div-divider{
+    padding: 5px 10px;
+    background-color: #24a503;
+    color: white;
+    font-family: 'Kalam', cursive, sans-serif;
+    font-size: 1.5em;
+}
+
+#div-divder-one{
+    border-radius: 5px 5px 0px 0px;
+}
+
+
+.cart-items-options{
+    border-top: 1px solid #bdbbbb;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 0px 12px;
+    padding: 12px 0px;
+}
+
+
+
+.cart-button {
+    
+    font-family: 'Caveat', cursive;
+    background-color: rgb(5, 198, 18);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.35em 0.45em;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.cart-button:hover{
+    transition: 500ms;
+    background-color: rgb(5, 152, 15);
+}
+
+
+.rm-button {
+    
+    font-family: 'Caveat', cursive;
+    background-color: #83d4ff;
+    color: black;
+    border: none;
+    border-radius: 3px;
+    padding: 0.35em 0.45em;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.rm-button:hover{
+    transition: 500ms;
+    background-color: #52c1fd
+}
+
+
+#total-price-section{
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.05em;
+}
+
+#total-price{
+    font-weight: 600;
+}
+
+.cart-itmes{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 8px 12px;
+    margin-top: 14px;  
+}
+.shoping-cart-item{
+    padding: 5px 12px;
+    border: 1px solid #c4c2c2;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.1em;
+}
+
+.shoping-cart-item img{
+    height: 50px;
+}
+
+.shoping-cart-item h2{
+    width: 120px;
+    font-weight: 600;
+}
+
+.shoping-cart-item input{
+    width: 60px;
+    border-radius: 3px;
+    padding: 0.25em 0.5em;
+    font-size: 1em;
+    border: 1px solid #c4c2c2;
+}
+
+.remove-from-cart-btn{
+    font-family: 'Caveat', cursive;
+    background-color: #f09a9a;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 0.31em 1em;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.remove-from-cart-btn:hover{
+    transition: 450ms;
+    background-color: #f65959;
+}
+

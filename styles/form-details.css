@@ -1,0 +1,115 @@
+
+
+/*Form*/
+.purchase-form-section{
+    padding:20px;
+    border-radius: 0px 0px 5px 5px;
+}
+.purchase-form-section form > *{
+    margin-bottom: 20px;
+}
+
+.checkbox-input label{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10.67px;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.form-checkbox input {
+    box-sizing: border-box;
+    width: 18.5px;
+    height: 18.5px;
+    order: 1;
+}
+
+.purchase-form-section input {
+    width: 100%;
+    margin: 7px 0px;
+    display: inline-block;
+    padding: 12px 25px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+    font-size: 1em;
+    font-family: inherit;
+    background: white;
+}
+
+.form-checkbox label {
+    font-weight: 400;
+    font-size: 1.1em;
+    line-height: 150%;
+    color: #282938;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+#name-surname-input-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 32px;
+}
+
+#name-surname-input-container div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    order: 0;
+    flex-grow: 1;
+}
+
+#name-surname-input-container div label{
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+#name-surname-input-container div input{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+#payment-info-contianer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 32px;
+}
+
+#name-surname-input-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    order: 0;
+    flex-grow: 1;
+}
+
+.checkout-navigation-buttons{
+    display: flex;
+    justify-content: end;
+    
+}
+
+

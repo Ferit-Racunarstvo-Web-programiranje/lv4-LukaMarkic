@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Mogra&family=Nanum+Brush+Script&family=Oregano&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kalam&family=Mogra&family=Nanum+Brush+Script&family=Varela+Round&display=swap');
+
+
+* {
+    background-color: rgba(251, 255, 252, 0.5);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 12px;
+    background-color: #b0f994c9;
+}
+.nav-cart h1{
+    font-family: 'Mogra', cursive;
+    font-size: 1.5em;
+    margin: 0;
+    width: auto;
+    background-color: #b0f994c9;
+}
+
+.nav-cart div{
+    border-radius: 5px;
+    border: 1px solid rgb(124, 124, 124);
+    background-color: rgb(255, 255, 255);   
+    cursor: pointer;
+    padding: 5px 0px;
+}
+
+.nav-cart div a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.35em;
+    font-family: 'Caveat', cursive;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    padding: 5px 12px;
+}
+
+.nav-cart div a:hover{
+    transition: 450ms;
+    background-color: rgb(231, 229, 255);
+}
+
+.successful-order-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    text-align: center;
+}
+
+.successful-order-content img{
+
+    width: 310px;
+    height: 310px;
+}
+
+.order-outcome-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.order-outcome-content h2{
+    font-family: 'Kalam', cursive, sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+}
+.order-outcome-content p{
+    padding-top: 35px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.3em;
+}
+
+.order-outcome-content a{
+    text-decoration: none;
+    color: rgba(6, 111, 20, 0.653);
+    font-family: 'Caveat', cursive;
+    font-size: 1.3em;
+    font-weight: 600;
+}
