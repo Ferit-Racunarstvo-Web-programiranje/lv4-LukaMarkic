@@ -114,45 +114,47 @@ function AddItemsToOrder($spoj, $order_id)
 
 }
 if (isset($_POST["send-order"])) {
-    if (empty($_SESSION["shopping_cart"])) {
-        return;
-    }
-    $id = 1;
-    $name = $_POST["first-name-input"];
-    $surname = $_POST["last-name-input"];
-    $address = $_POST["home-address"];
-    $email = $_POST["email-address"];
-    $result = $spoj->query(
-        "SELECT `id` FROM `orders`"
-    );
-    $itmes = array();
+    if (!empty($_SESSION["shopping_cart"])) {
+        $id = 1;
+        $name = $_POST["first-name-input"];
+        $surname = $_POST["last-name-input"];
+        $address = $_POST["home-address"];
+        $email = $_POST["email-address"];
+        $result = $spoj->query(
+            "SELECT `id` FROM `orders`"
+        );
+        $itmes = array();
 
-    $sql = "INSERT INTO `orders`(`id`, `name`, `surname`, `address`, `email`) VALUES (?,?,?,?,?)";
-    $stmt = $spoj->prepare($sql);
+        $sql = "INSERT INTO `orders`(`id`, `name`, `surname`, `address`, `email`) VALUES (?,?,?,?,?)";
+        $stmt = $spoj->prepare($sql);
 
 
-    if ($result->num_rows > 0) {
+        if ($result->num_rows > 0) {
 
-        while ($redak = $result->fetch_assoc()) {
-            array_push($itmes, $redak["id"]);
-        }
-
-        // Ispisivanje koji je index slobodan
-        for ($i = 1; $i <= count($itmes) + 2; $i++) {
-            if (in_array($i, $itmes) == false) {
-                $id = $i;
-                $stmt->bind_param("issss", $id, $name, $surname, $address, $email);
-                $stmt->execute();
-                AddItemsToOrder($spoj, $id);
-                unset($_SESSION["shopping_cart"]);
-                header("Location: ./order_confirmation.php");
-                break;
+            while ($redak = $result->fetch_assoc()) {
+                array_push($itmes, $redak["id"]);
             }
-        }
 
-    } else {
-        $stmt->bind_param("issss", $id, $name, $surname, $address, $email);
-        $stmt->execute();
+            // Ispisivanje koji je index slobodan
+            for ($i = 1; $i <= count($itmes) + 2; $i++) {
+                if (in_array($i, $itmes) == false) {
+                    $id = $i;
+                    $stmt->bind_param("issss", $id, $name, $surname, $address, $email);
+                    $stmt->execute();
+                    AddItemsToOrder($spoj, $id);
+                    unset($_SESSION["shopping_cart"]);
+                    header("Location: ./order_confirmation.php");
+                    break;
+                }
+            }
+
+        } else {
+            $stmt->bind_param("issss", $id, $name, $surname, $address, $email);
+            $stmt->execute();
+            AddItemsToOrder($spoj, $id);
+            unset($_SESSION["shopping_cart"]);
+            header("Location: ./order_confirmation.php");
+        }
     }
 }
 ?>
