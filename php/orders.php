@@ -85,7 +85,7 @@ if (isset($_POST['delete-order'])) {
 
             }
         } else {
-            echo '<p id="orders-message">There are no any orders!</p>';
+            echo '<p id="orders-message">There are no orders!</p>';
         }
         $spoj->close();
         ?>
